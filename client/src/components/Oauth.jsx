@@ -15,6 +15,9 @@ export default function Oauth() {
            
 
             const result = await signInWithPopup(auth, provider);
+            console.log(result);
+            console.log(result.user.photoURL);
+
             
             const res = await fetch('/api/auth/oauth/google',{
                   method:"POST",
@@ -25,6 +28,7 @@ export default function Oauth() {
                     email:result.user.email,
                 photo:result.user.photoURL}),
             })
+            console.log(res);
 
             const data = await res.json();
 
