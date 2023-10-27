@@ -36,7 +36,7 @@ export default function Profile() {
       handleFileUpload(file);
     }
   }, [file]);
-  console.log(currentUser._id)
+  
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
 
@@ -51,7 +51,7 @@ export default function Profile() {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setFilePerc(Math.round(progress));
 
-        console.log("upload is " + progress + "% done");
+       
       },
 
       (error) => {
