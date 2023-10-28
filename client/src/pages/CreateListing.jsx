@@ -6,7 +6,7 @@ import {
 } from "firebase/storage";
 import { useState } from "react";
 import { app } from "../firebase";
-import { set } from "mongoose";
+
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
