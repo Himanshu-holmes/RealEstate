@@ -4,14 +4,16 @@ import userRouter from './routes/user.route.js';
 import authRouter from "./routes/auth.route.js"
 import cookieParser from 'cookie-parser';
 import listingRouter from './routes/listing.route.js'
-import path from 'path'
-
+import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 app.use(express.json())
 app.use(cookieParser())
 
-mongoose.connect(`${process.env.MONGO}`)
+
+mongoose.connect(process.env.MONGO)
     .then(db => console.log('DB is connected'))
     .catch(err => console.log(err));
 
